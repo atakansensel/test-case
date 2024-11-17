@@ -1,0 +1,58 @@
+// Ensure you've defined the necessary mixins and variables in the corresponding files
+@import '../styles/mixins';   // Make sure mixins like `box-shadow` and `flex-center` are defined here
+@import '../styles/variables'; // Ensure variables like `$primary-color`, `$secondary-color` are defined here
+
+.movie-list {
+  // Movie table styling
+  .movie-table {
+    @include box-shadow(); // Apply box-shadow mixin
+    background: #6c757d;
+    border-radius: 8px;
+    padding: 10px;
+
+    th {
+      background-color: $primary-color;  // Primary color for the header
+      color: white;
+      text-align: left;
+      padding: 10px;
+    }
+
+    td {
+      padding: 10px;
+      
+      &:hover {
+        background-color: $secondary-color;  // Hover effect for table cells
+        color: white;
+      }
+    }
+  }
+
+
+  .pagination-buttons {
+    @include flex-center;
+    margin-top: 20px;
+
+    button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      @include box-shadow(); // Apply box-shadow mixin
+      background-color: transparent;
+      border: 1px solid $primary-color;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $primary-color; // Hover background for buttons
+        color: white;
+      }
+
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.form-control{
+     width: '300px';
+}
